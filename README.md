@@ -1,3 +1,7 @@
+# 🦖 Raptor: Go Database Migration Tool
+
+----
+
 **Raptor** is a powerful and flexible database migration tool for Go, inspired by Laravel's elegant migration system. It enables developers to manage database schema changes using clean, reversible Go structs and a simple CLI interface. Whether you're working with PostgreSQL, MySQL, SQLite, or any other SQL database, Raptor makes schema evolution seamless and maintainable. ---
 
 ## 👤 Background & Motivation
