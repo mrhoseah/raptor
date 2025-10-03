@@ -151,25 +151,44 @@ To simplify migration tasks, use the included `Makefile` for quick command execu
 ```makefile
 # Makefile for running Raptor CLI commands
 
-# Run all pending migrations
+# --- Environment Variables (Read by main.go) ---
+# The underlying Go program (main.go) is expected to read these variables
+# to construct the database connection string (DSN).
+# Defaults are provided using `?=`. You can override them by passing them
+# on the command line, e.g., 'make migrate DB_PASSWORD=secret'.
+
+DB_DRIVER ?= postgres
+DB_HOST ?= localhost
+DB_NAME ?= raptor_db
+DB_USER ?= user
+DB_PASSWORD ?= password
+ENABLE_SSL ?= disable
+
+# Alias for the main runner command.
+CLI_CMD = go run main.go
+
+.PHONY: migrate rollback status build
+
+# Target for running migrations
 migrate:
 	@echo "--- Running database migrations ---"
-	go run main.go migrate
+	$(CLI_CMD) migrate
 
-# Roll back the most recent batch of migrations
+# Target for rolling back the last batch
 rollback:
 	@echo "--- Rolling back last migration batch ---"
-	go run main.go rollback
+	$(CLI_CMD) rollback
 
-# Display applied and pending migrations
+# Target for viewing the migration status
 status:
 	@echo "--- Checking migration status ---"
-	go run main.go status
+	$(CLI_CMD) status
 
-# Build the CLI binary (recommended for production use)
+# Target to build the migration binary (optional, but recommended for production)
 build:
 	@echo "--- Building migration binary ---"
 	go build -o raptor-cli main.go
+
 ```
 
 ### ✅ Usage
