@@ -48,20 +48,20 @@ Create a Go struct that implements the `raptor.Migration` interface:
 // migrations/001_create_users_table.go
 package migrations
 
-import "github.com/mrhoseah/raptor"
+import raptor "github.com/mrhoseah/raptor/core"
 
 type CreateUsersTable struct{}
 
 func (m *CreateUsersTable) Name() string {
-    return "001_create_users_table"
+	return "001_create_users_table"
 }
 
 func (m *CreateUsersTable) Up(s raptor.Schema) error {
-    return s.CreateTable("users", []string{"id", "email", "password", "created_at"})
+	return s.CreateTable("users", []string{"id", "email", "password", "created_at"})
 }
 
 func (m *CreateUsersTable) Down(s raptor.Schema) error {
-    return s.DropTable("users")
+	return s.DropTable("users")
 }
 ```
 
