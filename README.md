@@ -1,3 +1,5 @@
+---
+
 # 🦖 Raptor: Go Database Migration Tool
 
 **Raptor** is a powerful and flexible database migration tool for Go, inspired by Laravel's elegant migration system. It enables developers to manage database schema changes using clean, reversible Go structs and a simple CLI interface.
@@ -143,6 +145,49 @@ func main() {
 | `go run main.go migrate`  | Runs all pending migrations and records them as a new batch. |
 | `go run main.go rollback` | Reverts the most recent batch of migrations.                 |
 | `go run main.go status`   | Displays applied and pending migrations.                     |
+
+---
+
+## 🧰 Makefile Integration
+
+To simplify migration tasks, use the included `Makefile` for quick command execution:
+
+```makefile
+# Makefile for running Raptor CLI commands
+
+# Run all pending migrations
+migrate:
+	@echo "--- Running database migrations ---"
+	go run main.go migrate
+
+# Roll back the most recent batch of migrations
+rollback:
+	@echo "--- Rolling back last migration batch ---"
+	go run main.go rollback
+
+# Display applied and pending migrations
+status:
+	@echo "--- Checking migration status ---"
+	go run main.go status
+
+# Build the CLI binary (recommended for production use)
+build:
+	@echo "--- Building migration binary ---"
+	go build -o raptor-cli main.go
+```
+
+### ✅ Usage
+
+Run the following commands from your terminal:
+
+```bash
+make migrate   # Apply migrations
+make rollback  # Roll back last batch
+make status    # Check migration status
+make build     # Compile binary as raptor-cli
+```
+
+This setup is ideal for local development, CI/CD pipelines, and scripting migration workflows.
 
 ---
 
