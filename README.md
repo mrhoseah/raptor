@@ -1,16 +1,16 @@
-# 🦖 Raptor: Go Database Migration Tool
+# Raptor: Go Database Migration Tool
 
 ----
 
 **Raptor** is a powerful and flexible database migration tool for Go, inspired by Laravel's elegant migration system. It enables developers to manage database schema changes using clean, reversible Go structs and a simple CLI interface. Whether you're working with PostgreSQL, MySQL, SQLite, or any other SQL database, Raptor makes schema evolution seamless and maintainable. ---
 
-## 👤 Background & Motivation
+## Background & Motivation
 
 Built in **2023**, Raptor was born out of necessity. Coming from a Laravel background, I was used to its intuitive migration system and wanted something similar in Go—clean, reversible, and easy to manage. After months of development and refinement, I’ve finalized the tool and made it publicly available for others who want Laravel-style migrations in their Go projects.
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 - **Plug-and-Play Database Support**  
   Easily integrate with any SQL database by implementing the `raptor.Schema` interface. Supports PostgreSQL, MySQL, SQLite, and more.
@@ -26,7 +26,7 @@ Built in **2023**, Raptor was born out of necessity. Coming from a Laravel backg
 
 ---
 
-## 🚀 Installation
+## Installation
 
 To install Raptor in your Go project:
 
@@ -134,7 +134,7 @@ func main() {
 
 ---
 
-## 📜 CLI Commands
+## CLI Commands
 
 | Command                   | Description                                                  |
 |---------------------------|--------------------------------------------------------------|
@@ -144,7 +144,7 @@ func main() {
 
 ---
 
-## 🧰 Makefile Integration
+## Makefile Integration
 
 To simplify migration tasks, use the included `Makefile` for quick command execution:
 
@@ -191,7 +191,7 @@ build:
 
 ```
 
-### ✅ Usage
+### Usage
 
 Run the following commands from your terminal:
 
@@ -206,16 +206,16 @@ This setup is ideal for local development, CI/CD pipelines, and scripting migrat
 
 ---
 
-## 🔗 Useful Links
+## Useful Links
 
-- 📦 [Raptor on GitHub](https://github.com/mrhoseah/raptor)
-- 📚 Go Documentation: [golang.org/doc](https://golang.org/doc)
-- 🐘 PostgreSQL: [postgresql.org](https://www.postgresql.org)
-- 🐬 MySQL: [mysql.com](https://www.mysql.com)
+-  [Raptor on GitHub](https://github.com/mrhoseah/raptor)
+-  Go Documentation: [golang.org/doc](https://golang.org/doc)
+-  PostgreSQL: [postgresql.org](https://www.postgresql.org)
+-  MySQL: [mysql.com](https://www.mysql.com)
 
 ---
 
-## 💡 Why Choose Raptor?
+## Why Choose Raptor?
 
 Raptor is ideal for Go developers who want a clean, testable, and extensible migration system. With its Laravel-inspired design and plug-and-play architecture, it fits naturally into modern Go projects and CI/CD pipelines.
 
